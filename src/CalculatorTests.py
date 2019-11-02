@@ -47,6 +47,13 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.result, Decimal(row['Result']))
             pass
 
+        def test_square(self):
+            testdata = CsvReader('/src/Unit_Test_Square.csv').data
+            print(testdata)
+            for row in testdata:
+             self.assertEqual(self.calculator.square(row['Value 1']), int(row['Result']))
+             self.assertEqual(self.calculator.result, int(row['Result']))
+            pass
 
 
 if __name__ == '__main__':
