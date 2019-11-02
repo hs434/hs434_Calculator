@@ -1,3 +1,5 @@
+import math
+from decimal import getcontext, Decimal
 
 def addition(a, b):
     a = int(a)
@@ -26,6 +28,12 @@ def squarecalc(a):
     c = a*a
     return c
 
+def squarerootcalc(a):
+    getcontext().prec = 10
+    c = Decimal(a).sqrt()
+    return c
+
+
 class Calculator:
     result = 0
 
@@ -50,3 +58,6 @@ class Calculator:
         return self.result
 
 
+    def squareroot(self,a):
+        self.result = squarerootcalc(a)
+        return self.result
